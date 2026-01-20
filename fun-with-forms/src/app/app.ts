@@ -1,12 +1,25 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { DinnerReview } from './models/dinner-review.model';
+import { CommonModule } from '@angular/common';
+import { form, FormField, required } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CommonModule, FormField],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('fun-with-forms');
+  readonly model = signal<DinnerReview>({
+    username: '', 
+    description: '', 
+    rating: 0
+  });
+
+  readonly frm = form(this.model, path => {
+    required(path.username, { message: 'Username is required' });
+    required(path.description, { message: 'Description is required' });
+  });
+
+
 }
