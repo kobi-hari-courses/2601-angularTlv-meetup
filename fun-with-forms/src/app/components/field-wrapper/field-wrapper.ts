@@ -1,6 +1,6 @@
 import { Component, computed, contentChild, input } from "@angular/core";
 import { FormField, REQUIRED } from "@angular/forms/signals";
-import { LABEL } from "../../schema/label.metadata-key";
+import { LABEL } from "../../schema/label.key";
 
 @Component({
   selector: 'app-field',

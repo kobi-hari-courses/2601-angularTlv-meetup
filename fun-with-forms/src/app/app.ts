@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { form, FormField, max, maxLength, metadata, min, required } from '@angular/forms/signals';
 import { StarRating } from './components/star-rating/star-rating';
 import { FieldWrapper } from "./components/field-wrapper/field-wrapper";
-import { LABEL } from './schema/label.metadata-key';
-import { withLabel } from './schema/label-schema';
+import { withLabel } from './schema/label.key';
+import { maxWords } from './schema/max-words.key';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +33,7 @@ export class App {
     withLabel(path.title, 'Review Title');
     withLabel(path.description, 'Review Description');
     withLabel(path.rating, 'Star Rating');
+    maxWords(path.description, 5);
   });
 
 
