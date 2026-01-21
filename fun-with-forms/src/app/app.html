@@ -6,12 +6,17 @@
   </div>
 
   <div class="field">
+    <label>Title</label>
+    <input [formField]="frm.title" type="text" />
+  </div>
+
+  <div class="field">
     <label>Description</label>
     <textarea [formField]="frm.description" rows="4"></textarea>
   </div>
   <div class="field">
     <label>Rating</label>
-    <input [formField]="frm.rating" type="number" />
+    <app-star-rating [formField]="frm.rating"/>
   </div>
 </div>
 

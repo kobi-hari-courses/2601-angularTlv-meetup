@@ -14,7 +14,12 @@ export const appConfig: ApplicationConfig = {
       classes: {
         'invalid': ctrl => ctrl.state().invalid(), 
         'touched': ctrl => ctrl.state().touched(), 
-        'marked-invalid': ctrl => ctrl.state().invalid() && ctrl.state().touched()
+        'marked-invalid': ctrl => ctrl.state().invalid() && ctrl.state().touched(), 
+        'short': ctrl => {
+          const maxLength = ctrl.state().maxLength?.();
+          if (maxLength === undefined) return false;
+          return maxLength <= 3;
+        }
       }
     })
   ]
