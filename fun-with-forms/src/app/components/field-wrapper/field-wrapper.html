@@ -1,0 +1,12 @@
+<label>
+  @if (required()) {
+    <span class="required-marker">*</span>
+  }
+  {{ label() }}
+</label>
+<ng-content />
+@if (showErrors()) {
+  @for (err of errors(); track err.kind) {
+    <div class="error">{{ err.message }}</div>
+  }
+}

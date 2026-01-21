@@ -1,23 +1,20 @@
 <div class="form">
   <h3>Dinner Review</h3>
-  <div class="field">
-    <label>Username</label>
+  <app-field label="Username">
     <input [formField]="frm.username" type="text" />
-  </div>
+  </app-field>
 
-  <div class="field">
-    <label>Title</label>
+  <app-field label="Title">
     <input [formField]="frm.title" type="text" />
-  </div>
+  </app-field>
 
-  <div class="field">
-    <label>Description</label>
+  <app-field label="Description">
     <textarea [formField]="frm.description" rows="4"></textarea>
-  </div>
-  <div class="field">
-    <label>Rating</label>
+  </app-field>
+
+  <app-field label="Rating">
     <app-star-rating [formField]="frm.rating"/>
-  </div>
+  </app-field>
 </div>
 
 <div class="model">
